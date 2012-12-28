@@ -59,7 +59,10 @@ class GoogleAnalytics extends Frontend
 			return;
 
 		$strBuffer = '
-document.write(unescape("%3Cscript src=\'" + (("https:" == document.location.protocol) ? "https://ssl." : "http://www.") + "google-analytics.com/ga.js\' type=\'text/javascript\'%3E%3C/script%3E"));
+new Element("script", {
+    type: "text/javascript",
+    href: ((("https:" == document.location.protocol) ? "https://ssl." : "http://www.") + "google-analytics.com/ga.js")
+}).inject(document.head);
 try {
 ';
 
