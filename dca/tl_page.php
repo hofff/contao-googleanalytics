@@ -8,12 +8,12 @@
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation, either
  * version 2.1 of the License, or (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * Lesser General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Lesser General Public
  * License along with this program. If not, please visit the Free
  * Software Foundation website at http://www.gnu.org/licenses/.
@@ -24,7 +24,7 @@
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  * @version    $Id$
  */
- 
+
 
 /**
  * Config
@@ -38,7 +38,7 @@ $GLOBALS['TL_DCA']['tl_page']['config']['onload_callback'][] = array('GoogleAnal
 $GLOBALS['TL_DCA']['tl_page']['palettes']['__selector__'][] = 'ga_enabled';
 $GLOBALS['TL_DCA']['tl_page']['palettes']['__selector__'][] = 'ga_tracktransition';
 $GLOBALS['TL_DCA']['tl_page']['palettes']['root'] .= ';{ga_legend},ga_enabled';
-$GLOBALS['TL_DCA']['tl_page']['subpalettes']['ga_enabled'] = 'ga_script,ga_trackingcodes,ga_code';
+$GLOBALS['TL_DCA']['tl_page']['subpalettes']['ga_enabled'] = 'ga_trackingcodes,ga_code';
 $GLOBALS['TL_DCA']['tl_page']['subpalettes']['ga_tracktransition'] = 'ga_ecitems,ga_ectrans';
 
 
@@ -51,15 +51,6 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['ga_enabled'] = array
 	'exclude'		=> true,
 	'inputType'		=> 'checkbox',
 	'eval'			=> array('submitOnChange'=>true),
-);
-
-$GLOBALS['TL_DCA']['tl_page']['fields']['ga_script'] = array
-(
-	'label'			=> &$GLOBALS['TL_LANG']['tl_page']['ga_script'],
-	'exclude'		=> true,
-	'default'		=> '<script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www."); document.write(unescape("%3Cscript src=\'" + gaJsHost + "google-analytics.com/ga.js\' type=\'text/javascript\'%3E%3C/script%3E"));</script>',
-	'inputType'		=> 'textarea',
-	'eval'			=> array('style'=>'height: 60px', 'allowHtml'=>true, 'preserveTags'=>true),
 );
 
 $GLOBALS['TL_DCA']['tl_page']['fields']['ga_trackingcodes'] = array

@@ -58,7 +58,10 @@ class GoogleAnalytics extends Frontend
 		if (!$objRootPage->numRows || !$objRootPage->ga_enabled)
 			return;
 		
-		$strBuffer = $objRootPage->ga_script . "\n<script type=\"text/javascript\">\n<!--//--><![CDATA[//><!--\ntry {\n";
+		$strBuffer = '
+document.write(unescape("%3Cscript src=\'" + (("https:" == document.location.protocol) ? "https://ssl." : "http://www.") + "google-analytics.com/ga.js\' type=\'text/javascript\'%3E%3C/script%3E"));
+try {
+';
 		
 		$arrTrackers = array();
 		$arrTrackingCodes = deserialize($objRootPage->ga_trackingcodes);
@@ -212,9 +215,9 @@ class GoogleAnalytics extends Frontend
 			}
 		}
 		
-		$strBuffer .= "\n} catch(err) {}\n//--><!]]>\n</script>";
+		$strBuffer .= "} catch(err) {}\n";
 		
-		$GLOBALS['TL_MOOTOOLS'][] = $strBuffer;
+		$GLOBALS['TL_MOOTOOLS'][] = '<script type="text/javascript">' . $strBuffer . '</script>';
 	}
 	
 	

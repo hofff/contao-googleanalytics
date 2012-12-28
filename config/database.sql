@@ -7,13 +7,12 @@
 -- *                                                        *
 -- **********************************************************
 
--- 
+--
 -- Table `tl_page`
--- 
+--
 
 CREATE TABLE `tl_page` (
   `ga_enabled` char(1) NOT NULL default '',
-  `ga_script` text NULL,
   `ga_trackingcodes` blob NULL,
   `ga_code` text NULL,
   `ga_events` blob NULL,
