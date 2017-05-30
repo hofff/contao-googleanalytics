@@ -1,111 +1,94 @@
 <?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
 
 /**
- * TYPOlight webCMS
- * Copyright (C) 2005-2009 Leo Feyer
- *
- * This program is free software: you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation, either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this program. If not, please visit the Free
- * Software Foundation website at http://www.gnu.org/licenses/.
- *
  * PHP version 5
- * @copyright  Andreas Schempp 2009
- * @author     Andreas Schempp <andreas@schempp.ch>
- * @license    http://opensource.org/licenses/lgpl-3.0.html
- * @version    $Id$
+ * @copyright  Jan Theofel 2011-2012, ETES GmbH 2010
+ * @author     Jan Theofel <jan@theofel.de>
+ * @package    googleanalytics
+ * @license    LGPL
  */
 
 
-/**
- * Config
- */
-$GLOBALS['TL_DCA']['tl_page']['config']['onload_callback'][] = array('GoogleAnalytics', 'showRegularPageFields');
+$GLOBALS['TL_DCA']['tl_page']['palettes']['root'] = str_replace('{publish_legend}', '{googleanalytics_legend},ga_analyticsid,ga_setdomainname,ga_ignoreadmins,ga_ignoremembers,ga_anonymizeip,ga_eventtracking,ga_bounceseconds,ga_externaltracking,ga_addlinktracking;{publish_legend}', $GLOBALS['TL_DCA']['tl_page']['palettes']['root']);
 
+$GLOBALS['TL_DCA']['tl_page']['palettes']['__selector__'][] = 'ga_addlinktracking';
+$GLOBALS['TL_DCA']['tl_page']['subpalettes']['ga_addlinktracking']='ga_titlelinktracking';
 
-/**
- * Palettes
- */
-$GLOBALS['TL_DCA']['tl_page']['palettes']['__selector__'][] = 'ga_enabled';
-$GLOBALS['TL_DCA']['tl_page']['palettes']['__selector__'][] = 'ga_tracktransition';
-$GLOBALS['TL_DCA']['tl_page']['palettes']['root'] .= ';{ga_legend},ga_enabled';
-$GLOBALS['TL_DCA']['tl_page']['subpalettes']['ga_enabled'] = 'ga_trackingcodes,ga_code';
-$GLOBALS['TL_DCA']['tl_page']['subpalettes']['ga_tracktransition'] = 'ga_ecitems,ga_ectrans';
-
-
-/**
- * Fields
- */
-$GLOBALS['TL_DCA']['tl_page']['fields']['ga_enabled'] = array
+$GLOBALS['TL_DCA']['tl_page']['fields']['ga_analyticsid'] = array
 (
-	'label'			=> &$GLOBALS['TL_LANG']['tl_page']['ga_enabled'],
-	'exclude'		=> true,
-	'inputType'		=> 'checkbox',
-	'eval'			=> array('submitOnChange'=>true),
+	'label'			=> &$GLOBALS['TL_LANG']['tl_page']['ga_analyticsid'],
+	'inputType'		=> 'text',
+	'eval'			=> array('size'=>20, 'tl_class'=>'w50')
 );
 
-$GLOBALS['TL_DCA']['tl_page']['fields']['ga_trackingcodes'] = array
+$GLOBALS['TL_DCA']['tl_page']['fields']['ga_anonymizeip'] = array
 (
-	'label'			=> &$GLOBALS['TL_LANG']['tl_page']['ga_trackingcodes'],
-	'exclude'		=> true,
-	'inputType'		=> 'multitextWizard',
-	'eval'			=> array('columns'=>2),
+        'label'                 => &$GLOBALS['TL_LANG']['tl_page']['ga_anonymizeip'],
+        'inputType'             => 'checkbox',
+        'eval'                  => array('tl_class'=>'w50'),
+
 );
 
-$GLOBALS['TL_DCA']['tl_page']['fields']['ga_code'] = array
+$GLOBALS['TL_DCA']['tl_page']['fields']['ga_anonymizeip'] = array
 (
-	'label'			=> &$GLOBALS['TL_LANG']['tl_page']['ga_code'],
-	'exclude'		=> true,
-	'inputType'		=> 'textarea',
-	'eval'			=> array('style'=>'height: 60px', 'preserveTags'=>true),
+        'label'                 => &$GLOBALS['TL_LANG']['tl_page']['ga_anonymizeip'],
+        'inputType'             => 'checkbox',
+        'eval'                  => array('tl_class'=>'w50'),
+
 );
 
-$GLOBALS['TL_DCA']['tl_page']['fields']['ga_events'] = array
+$GLOBALS['TL_DCA']['tl_page']['fields']['ga_ignoreadmins'] = array
 (
-	'label'			=> &$GLOBALS['TL_LANG']['tl_page']['ga_events'],
-	'exclude'		=> true,
-	'inputType'		=> 'multitextWizard',
-	'eval'			=> array('columns'=>4),
+        'label'                 => &$GLOBALS['TL_LANG']['tl_page']['ga_ignoreadmins'],
+        'inputType'             => 'checkbox',
+        'eval'                  => array('tl_class'=>'w50'),
+
 );
 
-$GLOBALS['TL_DCA']['tl_page']['fields']['ga_customvars'] = array
+$GLOBALS['TL_DCA']['tl_page']['fields']['ga_ignoremembers'] = array
 (
-	'label'			=> &$GLOBALS['TL_LANG']['tl_page']['ga_customvars'],
-	'exclude'		=> true,
-	'inputType'		=> 'multitextWizard',
-	'eval'			=> array('columns'=>3),
+        'label'                 => &$GLOBALS['TL_LANG']['tl_page']['ga_ignoremembers'],
+        'inputType'             => 'checkbox',
+        'eval'                  => array('tl_class'=>'w50'),
+
 );
 
-$GLOBALS['TL_DCA']['tl_page']['fields']['ga_tracktransition'] = array
+$GLOBALS['TL_DCA']['tl_page']['fields']['ga_externaltracking'] = array
 (
-	'label'			=> &$GLOBALS['TL_LANG']['tl_page']['ga_tracktransition'],
-	'exclude'		=> true,
-	'inputType'		=> 'checkbox',
-	'eval'			=> array('submitOnChange'=>true),
+        'label'                 => &$GLOBALS['TL_LANG']['tl_page']['ga_externaltracking'],
+        'inputType'             => 'checkbox',
+        'eval'                  => array('tl_class'=>'w50'),
+
 );
 
-$GLOBALS['TL_DCA']['tl_page']['fields']['ga_ecitems'] = array
+$GLOBALS['TL_DCA']['tl_page']['fields']['ga_addlinktracking'] = array
 (
-	'label'			=> &$GLOBALS['TL_LANG']['tl_page']['ga_ecitems'],
-	'exclude'		=> true,
-	'inputType'		=> 'multitextWizard',
-	'eval'			=> array('columns'=>6),
+        'label'                 => &$GLOBALS['TL_LANG']['tl_page']['ga_addlinktracking'],
+        'inputType'             => 'checkbox',
+        'eval'                  => array('tl_class'=>'w50', 'submitOnChange' => true),
+
 );
 
-$GLOBALS['TL_DCA']['tl_page']['fields']['ga_ectrans'] = array
+$GLOBALS['TL_DCA']['tl_page']['fields']['ga_setdomainname'] = array
 (
-	'label'			=> &$GLOBALS['TL_LANG']['tl_page']['ga_ectrans'],
-	'exclude'		=> true,
-	'inputType'		=> 'multitextWizard',
-	'eval'			=> array('columns'=>7),
+        'label'                 => &$GLOBALS['TL_LANG']['tl_page']['ga_setdomainname'],
+	'inputType'		=> 'text',
+	'eval'			=> array('size'=>150, 'tl_class'=>'w50')
+
+);
+
+$GLOBALS['TL_DCA']['tl_page']['fields']['ga_titlelinktracking'] = array
+(
+        'label'                 => &$GLOBALS['TL_LANG']['tl_page']['ga_titlelinktracking'],
+	'inputType'		=> 'text',
+	'eval'			=> array('size'=>150, 'tl_class'=>'w50')
+
+);
+
+$GLOBALS['TL_DCA']['tl_page']['fields']['ga_bounceseconds'] = array
+(
+	'label'			=> &$GLOBALS['TL_LANG']['tl_page']['ga_bounceseconds'],
+	'inputType'		=> 'text',
+	'eval'			=> array('size'=>10, 'tl_class'=>'w50', 'rgxp'=>'digit')
 );
 
