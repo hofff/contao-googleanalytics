@@ -9,6 +9,12 @@
   "homepage": "https://hofff.com/",
   "authors": [
     {
+      "name": "Nicky Hoff",
+      "homepage": "https://hofff.com",
+      "email": "nick@hofff.com",
+      "role": "Manager"
+    },
+    {
       "name": "Christopher Bölter",
       "email": "christopher@hofff.com",
       "homepage": "https://hofff.com/",

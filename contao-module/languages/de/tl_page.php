@@ -1,9 +1,11 @@
-<?php 
+<?php
 
 /**
  * PHP version 5
- * @copyright  Jan Theofel 2011-2012, ETES GmbH 2010
- * @author     Jan Theofel <jan@theofel.de>
+ *
+ * @copyright  Jan Theofel 2011, ETES GmbH 2010
+ * @author     Jan Theofel <jan@theofelde>
+ * @author     Christopher Bölter <christopher@hofff.com>
  * @package    googleanalytics
  * @license    LGPL
  * @filesource
@@ -20,7 +22,6 @@ $GLOBALS['TL_LANG']['tl_page']['ga_titlelinktracking']	= array('Gruppenname für
 $GLOBALS['TL_LANG']['tl_page']['ga_bounceseconds']	= array('Besucherzeit als Bounce definieren (Sekunden)', 'Bei Besuchen bis zu den hier eingegeben Sekunden wird der Besuch als Bounce gezählt. 0 zum deaktivieren. Empfohlene Werte: 5-10 Sekunden.');
 $GLOBALS['TL_LANG']['tl_page']['ga_ignoreadmins']	= array('Keine Zählung für Admins', 'Google Analytics nicht verwenden, wenn man zugleich im Backend angemeldet ist.');
 $GLOBALS['TL_LANG']['tl_page']['ga_ignoremembers']	= array('Keine Zählung für Mitglieder', 'Google Analytics nicht verwenden, wenn man als Mitglied auf der Seite angemeldet ist.');
-
 
 // Legends
 $GLOBALS['TL_LANG']['tl_page']['googleanalytics_legend']	= 'Google Analytics';

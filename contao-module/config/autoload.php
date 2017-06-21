@@ -1,13 +1,14 @@
 <?php
 
 /**
- * Contao Open Source CMS
+ * PHP version 5
  *
- * Copyright (C) 2005-2012 Leo Feyer
- *
- * @package Googleanalytics
- * @link    http://contao.org
- * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+ * @copyright  Jan Theofel 2011, ETES GmbH 2010
+ * @author     Jan Theofel <jan@theofelde>
+ * @author     Christopher Bölter <christopher@hofff.com>
+ * @package    googleanalytics
+ * @license    LGPL
+ * @filesource
  */
 
 /**
