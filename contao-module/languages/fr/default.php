@@ -1,6 +1,6 @@
 <?php
 /**
- * TL_ROOT/system/modules/googleanalytics/languages/fr/default.php 
+ * TL_ROOT/system/modules/hofff_googleanalytics/languages/fr/default.php
  * 
  * Contao extension: googleanalytics 1.3.4 stable 
  * Französisch translation file 

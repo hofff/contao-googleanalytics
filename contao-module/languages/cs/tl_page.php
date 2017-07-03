@@ -1,6 +1,6 @@
 <?php
 /**
- * TL_ROOT/system/modules/googleanalytics/languages/cs/tl_page.php 
+ * TL_ROOT/system/modules/hofff_googleanalytics/languages/cs/tl_page.php
  * 
  * Contao extension: googleanalytics 1.4.0 stable 
  * Czech translation file 

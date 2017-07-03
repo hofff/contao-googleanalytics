@@ -17,8 +17,8 @@
 TemplateLoader::addFiles(
     array
     (
-        'ce_download_ga'      => 'system/modules/googleanalytics/templates',
-        'ce_downloads_ga'     => 'system/modules/googleanalytics/templates',
-        'mod_googleanalytics' => 'system/modules/googleanalytics/templates',
+        'ce_download_ga'      => 'system/modules/hofff_googleanalytics/templates',
+        'ce_downloads_ga'     => 'system/modules/hofff_googleanalytics/templates',
+        'mod_googleanalytics' => 'system/modules/hofff_googleanalytics/templates',
     )
 );
