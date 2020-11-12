@@ -19,7 +19,12 @@
       "email": "christopher@hofff.com",
       "homepage": "https://hofff.com/",
       "role": "Developer"
-    }
+    },
+    {
+      "name":"Cliff Parnitzky",
+      "email":"contao@cliff-parnitzky.de",
+      "role":"Developer" 
+    },
   ],
   "require": {
     "php": "^5.6 || ^7.0",
