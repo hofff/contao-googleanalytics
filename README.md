@@ -1,28 +1,23 @@
-[![Latest Version on Packagist](http://img.shields.io/packagist/v/hofff/contao-my-module.svg?style=flat)](https://packagist.org/packages/hofff/contao-my-module)
-[![Installations via composer per month](http://img.shields.io/packagist/dm/hofff/contao-my-module.svg?style=flat)](https://packagist.org/packages/hofff/contao-my-module)
-[![Installations via composer total](http://img.shields.io/packagist/dt/hofff/contao-my-module.svg?style=flat)](https://packagist.org/packages/hofff/contao-my-module)
+[![Latest Version on Packagist](http://img.shields.io/packagist/v/hofff/contao-googleanalytics.svg?style=flat)](https://packagist.org/packages/hofff/contao-googleanalytics)
+[![Installations via composer per month](http://img.shields.io/packagist/dm/hofff/contao-googleanalytics.svg?style=flat)](https://packagist.org/packages/hofff/contao-googleanalytics)
+[![Installations via composer total](http://img.shields.io/packagist/dt/hofff/contao-googleanalytics.svg?style=flat)](https://packagist.org/packages/hofff/contao-googleanalytics)
 
 # Contao Extension: hofff.com - Google Analytics
 
-Describe it
+Google Analytics integration for Contao CMS.
 
 
 ## Features
 
-- ...
-- ...
+Manage Google analytics data in root page.
 
 
 ## Compatibility
 
-- min. Contao version: >= 3.5.0
-- max. Contao version: <  4.4.0
+- Contao version >= 3.2.0 ... <  3.6.0
+- Contao version >= 4.1.0
 
 
 ## Dependency
 
 There are no dependencies to other extensions, that have to be installed.
-
-## Screenshots
-
-![Back end configuration](screenshot-backend.png)
