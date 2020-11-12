@@ -6,16 +6,22 @@
  * @copyright  Jan Theofel 2011, ETES GmbH 2010
  * @author     Jan Theofel <jan@theofelde>
  * @author     Christopher Bölter <christopher@hofff.com>
+ * @author     Cliff Parnitzky <contao@cliff-parnitzky.de>
  * @package    googleanalytics
  * @license    LGPL
  * @filesource
  */
 
-$GLOBALS['TL_DCA']['tl_page']['palettes']['root'] = str_replace(
-    '{publish_legend}',
-    '{googleanalytics_legend},ga_analyticsid,ga_setdomainname,ga_ignoreadmins,ga_ignoremembers,ga_anonymizeip,ga_eventtracking,ga_bounceseconds,ga_externaltracking,ga_addlinktracking;{publish_legend}',
-    $GLOBALS['TL_DCA']['tl_page']['palettes']['root']
-);
+$arrRootPages = array("root", "rootfallback");
+foreach($arrRootPages as $pageType)
+{
+
+  $GLOBALS['TL_DCA']['tl_page']['palettes'][$pageType] = str_replace(
+      '{publish_legend}',
+      '{googleanalytics_legend},ga_analyticsid,ga_setdomainname,ga_ignoreadmins,ga_ignoremembers,ga_anonymizeip,ga_eventtracking,ga_bounceseconds,ga_externaltracking,ga_addlinktracking;{publish_legend}',
+      $GLOBALS['TL_DCA']['tl_page']['palettes'][$pageType]
+  );
+}
 
 $GLOBALS['TL_DCA']['tl_page']['palettes']['__selector__'][]        = 'ga_addlinktracking';
 $GLOBALS['TL_DCA']['tl_page']['subpalettes']['ga_addlinktracking'] = 'ga_titlelinktracking';
