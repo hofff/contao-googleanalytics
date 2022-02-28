@@ -11,7 +11,7 @@
  * @filesource
  */
 
-namespace Hofff\Contao\Frontend;
+namespace Hofff\Contao\GoogleAnalytics\Frontend;
 
 class GoogleAnalytics extends \Frontend
 {
