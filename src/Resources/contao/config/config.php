@@ -12,9 +12,7 @@
  */
 
 // register parse template hook
-$GLOBALS['TL_HOOKS']['parseFrontendTemplate'][] =
-    array('Hofff\\Contao\\Frontend\\GoogleAnalytics', 'addGoogleAnalytics');
+$GLOBALS['TL_HOOKS']['parseFrontendTemplate'][] = array('Hofff\\Contao\\Frontend\\GoogleAnalytics', 'addGoogleAnalytics');
 
 // register custom inserttags
-$GLOBALS['TL_HOOKS']['replaceInsertTags'][] =
-    array('Hofff\\Contao\\Frontend\\GoogleAnalytics', 'gaInsertTag');
+$GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('Hofff\\Contao\\Frontend\\GoogleAnalytics', 'gaInsertTag');

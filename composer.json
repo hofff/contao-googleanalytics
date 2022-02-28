@@ -1,12 +1,10 @@
 {
   "name": "hofff/contao-googleanalytics",
   "description": "Google Analytics integration for Contao CMS.",
-  "keywords": [
-    "contao"
-  ],
-  "type": "contao-module",
-  "license": "LGPL-3.0-or-later",
-  "homepage": "https://hofff.com/",
+  "keywords": ["contao"],
+  "type":"contao-bundle",
+  "license":"LGPL-3.0-or-later",
+  "homepage" : "https://hofff.com",
   "authors": [
     {
       "name": "Nicky Hoff",
@@ -27,20 +25,28 @@
     }
   ],
   "require": {
-    "php": "^5.6 || ^7.0",
-    "contao/core-bundle": "^3.5 || ^4.1",
-    "contao-community-alliance/composer-plugin": "^2.4 || ^3.0"
+    "php": ">=7.3",
+    "contao/core-bundle":"~4.9"
   },
   "autoload": {
-    "psr-0": {
-      "Hofff": "src/"
+    "psr-4": {
+      "Hofff\\GoogleAnalyticsBundle\\": "src/"
+    },
+    "classmap": [
+      "src/Resources/contao/"
+    ],
+    "exclude-from-classmap": [
+      "src/Resources/contao/config/",
+      "src/Resources/contao/dca/",
+      "src/Resources/contao/languages/"
+    ]
+  },
+  "extra":{
+    "contao-manager-plugin": "Hofff\\GoogleAnalyticsBundle\\ContaoManager\\Plugin",
+    "branch-alias": {
+      "dev-master": "2.0.x-dev"
     }
   },
-  "extra": {
-    "contao": {
-      "sources": {
-        "contao-module": "system/modules/hofff_googleanalytics"
-      }
-    }
-  }
+  "prefer-stable": true,
+  "minimum-stability": "dev"
 }
