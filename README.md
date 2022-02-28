@@ -14,8 +14,12 @@ Manage Google analytics data in root page.
 
 ## Compatibility
 
-- Contao version >= 3.2.0 ... <  3.6.0
-- Contao version >= 4.1.0
+- Contao version >= 4.9.0
+
+
+## Installation
+
+Install the extension via Contao Manager: [hofff/contao-googleanalytics](https://packagist.org/packages/hofff/contao-googleanalytics).
 
 
 ## Dependency
