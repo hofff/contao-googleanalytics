@@ -22,6 +22,8 @@ $GLOBALS['TL_LANG']['tl_page']['ga_titlelinktracking']	= array('Group name for a
 $GLOBALS['TL_LANG']['tl_page']['ga_bounceseconds']	= array('Visit time defined as bounce (seconds)', 'Visits with a time shorter than this are defined as bounce. 0 to turn off. Suggested values: 5-10 seconds.');
 $GLOBALS['TL_LANG']['tl_page']['ga_ignoreadmins']	= array('Ignore admins', 'Do not use Google Analytics if the visitor is logged din to the backend.');
 $GLOBALS['TL_LANG']['tl_page']['ga_ignoremembers']	= array('Ignore members', 'Do not use Google Analytics if the visitor is logged in as member of the web site.');
+$GLOBALS['TL_LANG']['tl_page']['ga_consentId']	= array('Google Analytics Consent ID', 'Select a consent id which has to be accepted.');
+
 
 // Legends
 $GLOBALS['TL_LANG']['tl_page']['googleanalytics_legend']	= 'Google Analytics';

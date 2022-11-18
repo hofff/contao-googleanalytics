@@ -12,13 +12,15 @@
  * @filesource
  */
 
+use Hofff\Contao\Consent\Bridge\EventListener\Dca\ConsentIdOptions;
+
 $arrRootPages = array("root", "rootfallback");
 foreach($arrRootPages as $pageType)
 {
 
   $GLOBALS['TL_DCA']['tl_page']['palettes'][$pageType] = str_replace(
       '{publish_legend}',
-      '{googleanalytics_legend},ga_analyticsid,ga_setdomainname,ga_ignoreadmins,ga_ignoremembers,ga_anonymizeip,ga_eventtracking,ga_bounceseconds,ga_externaltracking,ga_addlinktracking;{publish_legend}',
+      '{googleanalytics_legend},ga_analyticsid,ga_setdomainname,ga_ignoreadmins,ga_ignoremembers,ga_anonymizeip,ga_eventtracking,ga_bounceseconds,ga_externaltracking,ga_addlinktracking,ga_consentId;{publish_legend}',
       $GLOBALS['TL_DCA']['tl_page']['palettes'][$pageType]
   );
 }
@@ -105,3 +107,18 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['ga_bounceseconds'] = array
     'eval'      => array('size' => 10, 'tl_class' => 'w50', 'rgxp' => 'digit'),
     'sql'       => "int(10) unsigned NOT NULL default '0'",
 );
+
+$GLOBALS['TL_DCA']['tl_page']['fields']['ga_consentId'] = [
+    'label'            => &$GLOBALS['TL_LANG']['tl_page']['ga_consentId'],
+    'exclude'          => true,
+    'inputType'        => 'select',
+    'options_callback' => [ConsentIdOptions::class, '__invoke'],
+    'eval'             => [
+        'tl_class'           => 'w50',
+        'includeBlankOption' => true,
+        'chosen'             => true,
+        'multiple'           => false,
+        'nullIfEmpty'        => true,
+    ],
+    'sql'              => ['type' => 'string', 'default' => null, 'notnull' => false],
+];

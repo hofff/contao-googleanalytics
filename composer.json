@@ -26,20 +26,13 @@
   ],
   "require": {
     "php": ">=7.3",
-    "contao/core-bundle":"~4.9"
+    "contao/core-bundle":"~4.9",
+    "hofff/contao-consent-bridge": "^1.1"
   },
   "autoload": {
     "psr-4": {
       "Hofff\\GoogleAnalyticsBundle\\": "src/"
-    },
-    "classmap": [
-      "src/Resources/contao/"
-    ],
-    "exclude-from-classmap": [
-      "src/Resources/contao/config/",
-      "src/Resources/contao/dca/",
-      "src/Resources/contao/languages/"
-    ]
+    }
   },
   "extra":{
     "contao-manager-plugin": "Hofff\\GoogleAnalyticsBundle\\ContaoManager\\Plugin",
@@ -48,5 +41,10 @@
     }
   },
   "prefer-stable": true,
-  "minimum-stability": "dev"
+  "minimum-stability": "dev",
+  "config": {
+    "allow-plugins": {
+      "contao-components/installer": true
+    }
+  }
 }

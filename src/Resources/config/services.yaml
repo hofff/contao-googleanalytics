@@ -1,0 +1,5 @@
+services:
+  Hofff\GoogleAnalyticsBundle\Frontend\GoogleAnalytics:
+    arguments:
+      - '@Hofff\Contao\Consent\Bridge\ConsentToolManager'
+      - '@Hofff\Contao\Consent\Bridge\ConsentId\ConsentIdParser'
